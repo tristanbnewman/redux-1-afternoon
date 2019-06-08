@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import './Author.css';
+import store from '../../store'
 
 class Author extends Component {
   constructor(props) {
     super(props);
+    const storeState = store.getState()
     this.state = {
-      authorFirst: '',
-      authorLast: ''
+      authorFirst: storeState.authorFirst,
+      authorLast: storeState.authorLast
     };
   }
 
